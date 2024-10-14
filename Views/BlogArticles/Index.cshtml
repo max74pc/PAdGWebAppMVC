@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PAdGWebAppMVC.Models.BlogArticle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BA_Titolo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BA_Categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BA_Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BA_URL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BA_DataOra_Pubblicazione)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BA_Titolo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BA_Categoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BA_Descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BA_URL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BA_DataOra_Pubblicazione)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BA_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BA_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BA_Id })
+        </td>
+    </tr>
+}
+
+</table>
